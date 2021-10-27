@@ -8,13 +8,14 @@ def creare_cheltuiala(id,nr_apartament,suma,data,tipul):
     :param tipul: întreținere, canal, alte cheltuieli
     :return: o cheltuiala
     '''
-    return {
+    '''return {
         "id":id,
         "nr_apartament":nr_apartament,
         "suma":suma,
         "data":data,
         "tipul":tipul
-    }
+    }'''
+    return [id,nr_apartament,suma,data,tipul]
 
 #get
 def get_id(cheltuiala):
@@ -23,39 +24,43 @@ def get_id(cheltuiala):
     :param cheltuiala: cheltuiala
     :return: id pentru cheltuiala
     '''
-    return cheltuiala["id"]
-
+    return cheltuiala[0]
+    #return cheltuiala["id"]
 def get_nr_apartament(cheltuiala):
     '''
     Getter pentru nr apartament
     :param cheltuiala: cheltuiala
     :return:nr apartamentului cheltuieli
     '''
-    return cheltuiala["nr_apartament"]
+    return cheltuiala[1]
+    #return cheltuiala["nr_apartament"]
 def get_suma(cheltuiala):
     '''
     getter pentru suma
     :param cheltuiala: cheltuiala
     :return: suma cheltuieli
     '''
-    return cheltuiala["suma"]
+    return cheltuiala[2]
+    #return cheltuiala["suma"]
 def get_data(cheltuiala):
     '''
     getter pentru data
     :param cheltuiala:cheltuiala
     :return: data cheltuieli
     '''
-    return cheltuiala["data"]
+    return cheltuiala[3]
+    #return cheltuiala["data"]
 def get_tipul(cheltuiala):
     '''
     getter pentru tip
     :param cheltuiala: cheltuiala
     :return: tipul cheltuieli
     '''
-    return cheltuiala["tipul"]
+    return cheltuiala[4]
+    #return cheltuiala["tipul"]
 #set
 def set_id(cheltuiala,id):
-    cheltuiala["id"]=id
+    cheltuiala[0]=id
 def set_nr_apartement(cheltuiala,nr_apartament):
     '''
     setter pentru nr_apartament
@@ -63,7 +68,7 @@ def set_nr_apartement(cheltuiala,nr_apartament):
     :param nr_apartament: nr apartamentului
     :return: se seteaza nr apartamentului
     '''
-    cheltuiala["nr_apartament"]=nr_apartament
+    cheltuiala[1]=nr_apartament
 def set_suma(cheltuiala,suma):
     '''
 
@@ -71,7 +76,7 @@ def set_suma(cheltuiala,suma):
     :param suma:
     :return:
     '''
-    cheltuiala["suma"]=suma
+    cheltuiala[2]=suma
 def set_data(cheltuiala,data):
     '''
 
@@ -79,7 +84,7 @@ def set_data(cheltuiala,data):
     :param data:
     :return:
     '''
-    cheltuiala["data"]=data
+    cheltuiala[3]=data
 def set_tipul(cheltuiala,tipul):
     '''
 
@@ -87,7 +92,7 @@ def set_tipul(cheltuiala,tipul):
     :param tipul:
     :return:
     '''
-    cheltuiala["tipul"] = tipul
+    cheltuiala[4] = tipul
 
 def to_string(cheltuiala):
     '''
