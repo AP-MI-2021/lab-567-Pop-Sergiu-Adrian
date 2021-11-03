@@ -8,14 +8,13 @@ def creare_cheltuiala(id,nr_apartament,suma,data,tipul):
     :param tipul: întreținere, canal, alte cheltuieli
     :return: o cheltuiala
     '''
-    '''return {
+    return {
         "id":id,
         "nr_apartament":nr_apartament,
         "suma":suma,
         "data":data,
         "tipul":tipul
-    }'''
-    return [id,nr_apartament,suma,data,tipul]
+    }
 
 #get
 def get_id(cheltuiala):
@@ -24,40 +23,36 @@ def get_id(cheltuiala):
     :param cheltuiala: cheltuiala
     :return: id pentru cheltuiala
     '''
-    return cheltuiala[0]
-    #return cheltuiala["id"]
+    return cheltuiala["id"]
 def get_nr_apartament(cheltuiala):
     '''
     Getter pentru nr apartament
     :param cheltuiala: cheltuiala
     :return:nr apartamentului cheltuieli
     '''
-    return cheltuiala[1]
-    #return cheltuiala["nr_apartament"]
+
+    return cheltuiala["nr_apartament"]
 def get_suma(cheltuiala):
     '''
     getter pentru suma
     :param cheltuiala: cheltuiala
     :return: suma cheltuieli
     '''
-    return cheltuiala[2]
-    #return cheltuiala["suma"]
+    return cheltuiala["suma"]
 def get_data(cheltuiala):
     '''
     getter pentru data
     :param cheltuiala:cheltuiala
     :return: data cheltuieli
     '''
-    return cheltuiala[3]
-    #return cheltuiala["data"]
+    return cheltuiala["data"]
 def get_tipul(cheltuiala):
     '''
     getter pentru tip
     :param cheltuiala: cheltuiala
     :return: tipul cheltuieli
     '''
-    return cheltuiala[4]
-    #return cheltuiala["tipul"]
+    return cheltuiala["tipul"]
 #set
 def set_id(cheltuiala,id):
     cheltuiala[0]=id
@@ -100,4 +95,4 @@ def to_string(cheltuiala):
     :param obiect: o cheltuiala
     :return: modul in care se afiseaza cheltuiala
     '''
-    return "{}. Nr apartament{},suma:{},data:{},tipul:{}".format(get_id(cheltuiala),get_nr_apartament(cheltuiala),get_suma(cheltuiala),get_data(cheltuiala),get_tipul(cheltuiala))
+    return "{}. Nr apartament:{},suma:{},data:{},tipul:{}".format(get_id(cheltuiala),get_nr_apartament(cheltuiala),get_suma(cheltuiala),get_data(cheltuiala),get_tipul(cheltuiala))
