@@ -69,12 +69,9 @@ def test_undo_redo():
     assert len(lst_test) == 1
     lst_test = undo(lst_test, lst_undo_test, lst_redo_test)
     assert len(lst_test) == 0
-    #assert undo(lst_test,lst_undo_test,lst_redo_test) is None
-    assert len(lst_test) == 0
-    lst_test = adaugare_cheltuiala(lst_test, 1, 1, 12, 1 - 2 - 3, 'canal', lst_undo_test, lst_redo_test)
-    lst_test = adaugare_cheltuiala(lst_test, 2, 2, 13, 12 - 3 - 4, 'alte cheltuieli', lst_undo_test, lst_redo_test)
-    lst_test = adaugare_cheltuiala(lst_test, 3, 3, 14, 123 - 3 - 4, 'intretinere', lst_undo_test, lst_redo_test)
-    #assert redo(lst_test,lst_undo_test,lst_redo_test) is None
+    lst_test = adaugare_cheltuiala(lst_test, 1, 1, 12, 1-2-3, 'canal', lst_undo_test, lst_redo_test)
+    lst_test = adaugare_cheltuiala(lst_test, 2, 2, 13, 12-3 -4, 'alte cheltuieli', lst_undo_test, lst_redo_test)
+    lst_test = adaugare_cheltuiala(lst_test, 3, 3, 14, 123-3-4, 'intretinere', lst_undo_test, lst_redo_test)
     assert len(lst_test) == 3
     lst_test = undo(lst_test, lst_undo_test, lst_redo_test)
     lst_test = undo(lst_test, lst_undo_test, lst_redo_test)
@@ -87,7 +84,6 @@ def test_undo_redo():
     lst_test = undo(lst_test, lst_undo_test, lst_redo_test)
     assert len(lst_test) == 1
     lst_test = adaugare_cheltuiala(lst_test, 5, 3, 12, 1 - 2 - 3, 'canal', lst_undo_test, lst_redo_test)
-    #assert redo(lst_test,lst_undo_test,lst_redo_test) is None
     assert len(lst_test) == 2
     lst_test = undo(lst_test, lst_undo_test, lst_redo_test)
     assert len(lst_test) == 1
@@ -96,6 +92,14 @@ def test_undo_redo():
     lst_test = redo(lst_test, lst_undo_test, lst_redo_test)
     lst_test = redo(lst_test, lst_undo_test, lst_redo_test)
     assert len(lst_test) == 2
-    #assert redo(lst_test, lst_undo_test, lst_redo_test) is None
-    assert len(lst_test) == 2
+    lst_test=redo(lst_test,lst_undo_test,lst_redo_test)
+    lst_test=stergere_cheltuiala(1,lst_test,lst_undo_test,lst_redo_test)
+    assert len(lst_test)==1
+    lst_test = undo(lst_test, lst_undo_test, lst_redo_test)
+    assert len(lst_test)==2
+    lst_test=ordonare_cheltuieli_dupa_suma(lst_test,lst_undo_test,lst_redo_test)
+    lst_test = undo(lst_test, lst_undo_test, lst_redo_test)
+    lst_test = redo(lst_test, lst_undo_test, lst_redo_test)
+
+
 
