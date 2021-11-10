@@ -13,18 +13,22 @@ def test_stergere_cheltuiala():
     lista=[c1]
     c2=creare_cheltuiala(2,2,3,2111-2-13,"canal")
     lista=[c1,c2]
-    assert stergere_cheltuiala(2,lista)==[c1]
+    lst_undo=[]
+    lst_redo=[]
+    assert stergere_cheltuiala(2,lista,lst_undo,lst_redo)==[c1]
 def test_modificare_cheltuiala():
     c1 = creare_cheltuiala(1,1, 6, 2222-2-23, "canal")
     c2 = creare_cheltuiala(2,2, 3, 1888-9-12, "canal")
     lista=[c1,c2]
+    lst_undo = []
+    lst_redo = []
     new_id=1
     new_nr_apartament=get_nr_apartament(c2)
     new_suma=4
     new_data=1222-2-2
     new_tipul="canal"
     new_c=creare_cheltuiala(1,2,4,1222-2-2,"canal")
-    assert modificare_cheltuiala(lista , new_id,get_nr_apartament(new_c),new_suma,new_data,new_tipul)
+    assert modificare_cheltuiala(lista , new_id,get_nr_apartament(new_c),new_suma,new_data,new_tipul,lst_undo,lst_undo)
     assert get_suma(new_c)==new_suma
     assert get_data(new_c) == new_data
     assert get_tipul(new_c) == new_tipul

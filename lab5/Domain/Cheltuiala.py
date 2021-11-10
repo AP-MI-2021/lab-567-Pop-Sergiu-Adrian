@@ -8,13 +8,7 @@ def creare_cheltuiala(id,nr_apartament,suma,data,tipul):
     :param tipul: întreținere, canal, alte cheltuieli
     :return: o cheltuiala
     '''
-    return {
-        "id":id,
-        "nr_apartament":nr_apartament,
-        "suma":suma,
-        "data":data,
-        "tipul":tipul
-    }
+    return [id,nr_apartament,suma,data,tipul]
 
 #get
 def get_id(cheltuiala):
@@ -23,7 +17,7 @@ def get_id(cheltuiala):
     :param cheltuiala: cheltuiala
     :return: id pentru cheltuiala
     '''
-    return cheltuiala["id"]
+    return cheltuiala[0]
 def get_nr_apartament(cheltuiala):
     '''
     Getter pentru nr apartament
@@ -31,28 +25,28 @@ def get_nr_apartament(cheltuiala):
     :return:nr apartamentului cheltuieli
     '''
 
-    return cheltuiala["nr_apartament"]
+    return cheltuiala[1]
 def get_suma(cheltuiala):
     '''
     getter pentru suma
     :param cheltuiala: cheltuiala
     :return: suma cheltuieli
     '''
-    return cheltuiala["suma"]
+    return cheltuiala[2]
 def get_data(cheltuiala):
     '''
     getter pentru data
     :param cheltuiala:cheltuiala
     :return: data cheltuieli
     '''
-    return cheltuiala["data"]
+    return cheltuiala[3]
 def get_tipul(cheltuiala):
     '''
     getter pentru tip
     :param cheltuiala: cheltuiala
     :return: tipul cheltuieli
     '''
-    return cheltuiala["tipul"]
+    return cheltuiala[4]
 #set
 def set_id(cheltuiala,id):
     cheltuiala[0]=id
